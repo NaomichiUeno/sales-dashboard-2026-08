@@ -3,116 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026年8月 売上メーター</title>
+<meta name="theme-color" content="#0c0c0b">
+<title>2026年8月チーム売上順位</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100svh;background:#101310;color:#f6f6ee;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;display:grid;place-items:center;padding:48px 24px}main{width:min(100%,1000px)}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:24px;border-bottom:1px solid #343b32;font-size:14px;color:#b9c0b5}header strong{font-weight:500;color:#eef0e8}.hero{padding:60px 0 48px}.team{margin:0 0 12px;font-size:18px;font-weight:500;color:#c7d6b1}.amount{font-variant-numeric:tabular-nums;letter-spacing:-.055em;font-size:clamp(44px,9vw,100px);font-weight:650;line-height:1.15;white-space:nowrap}.track-wrap{padding-top:58px;padding-bottom:40px}.track{height:36px;background:#262e24;border-radius:5px;position:relative}.fill{position:absolute;inset:0 auto 0 0;width:0;background:#c4e99b;border-radius:5px;box-shadow:0 0 32px #b9df8015}.marker{position:absolute;top:-12px;bottom:-12px;border-left:1px solid #929d86;pointer-events:none}.marker span{position:absolute;bottom:calc(100% + 12px);left:0;transform:translateX(-50%);color:#b9c0b5;font-size:13px;white-space:nowrap}.marker.b{left:34.1702222222%}.marker.c{left:94.5658888889%}.axis{display:flex;justify-content:space-between;color:#87927f;font-size:12px;margin-top:22px}.benchmarks{display:grid;grid-template-columns:1fr 1fr;gap:16px}.benchmark{padding:24px;border:1px solid #343e2f;border-radius:10px;background:#171d16}.benchmark p{margin:0 0 10px;color:#aebb9f;font-size:14px}.benchmark strong{font-size:clamp(20px,3vw,30px);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.controls{display:flex;gap:12px;margin-top:40px}button{appearance:none;font:inherit;font-size:15px;min-height:48px;border-radius:7px;padding:0 30px;cursor:pointer;border:1px solid #485440;background:transparent;color:#d7ddcf}button.primary{background:#c4e99b;color:#182011;border-color:#c4e99b;min-width:150px;font-weight:650}button:disabled{cursor:default;opacity:.5}button:focus-visible{outline:3px solid #fff;outline-offset:5px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:540px){body{padding:30px 20px}.hero{padding:44px 0 30px}.team{font-size:16px}.track-wrap{padding-top:48px;padding-bottom:28px}.track{height:28px}.benchmark{padding:20px 14px}.benchmarks{gap:10px}.controls{margin-top:30px}header{font-size:12px}.marker.c span{transform:translateX(-75%)}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-[hidden]{display:none!important}.results{padding:48px 0 8px}.results h1{margin:0 0 28px;font-size:clamp(26px,4vw,40px);font-weight:600;letter-spacing:.02em}.ranking{list-style:none;padding:0;margin:0;display:grid;gap:12px}.rank-card{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:center;padding:26px 28px;border:1px solid #343e2f;border-radius:10px;background:#171d16}.rank-card:first-child{border-color:#b3ce89;background:#222d1c}.rank{font-size:26px;font-weight:600;color:#aebb9f}.rank-card:first-child .rank{color:#d5edab}.rank small{font-size:14px;margin-left:4px}.rank-team{font-size:20px;font-weight:500}.rank-money{text-align:right}.rank-money span{display:block;color:#aebb9f;font-size:12px;margin-bottom:5px}.rank-money strong{font-size:clamp(24px,3.6vw,36px);font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}.result-note{font-size:12px;color:#aebb9f;margin:16px 0 0}.hero{padding-bottom:8px}.results h1:focus{outline:none}@media(max-width:540px){.results{padding-top:36px}.rank-card{grid-template-columns:42px 1fr;gap:10px 12px;padding:20px}.rank{grid-row:1 / 3;font-size:24px}.rank-team{font-size:17px}.rank-money{grid-column:2;text-align:left}.rank-money strong{font-size:clamp(23px,7vw,32px)}.rank-money span{font-size:11px;margin-bottom:3px}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:#0c0c0b;color:#f4eee0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;padding:64px 24px}
+main{width:min(100%,1020px);margin:auto}
+header{text-align:center;padding:0 0 44px}
+.emblem{display:block;width:44px;height:44px;margin:0 auto 22px;color:#d3b778}
+h1{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(22px,3.4vw,36px);font-weight:600;line-height:1.6;letter-spacing:.1em;text-wrap:balance}
+.header-rule{width:64px;height:1px;background:#c5a568;margin:24px auto 0}
+.ranking{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.rank-card{position:relative;display:grid;grid-template-columns:100px 1fr auto;gap:32px;align-items:center;padding:36px 42px;border:1px solid #494030;background:#141311}
+.rank-card:first-child{padding-top:48px;padding-bottom:48px;border-color:#c1a263;background:linear-gradient(110deg,#2b2417,#181611 70%);box-shadow:inset 0 0 0 5px #19160f,inset 0 0 0 6px #574629}
+.rank{width:80px;height:80px;border:1px solid #766241;border-radius:50%;display:flex;align-items:baseline;justify-content:center;padding-top:9px;color:#c4aa78;font-family:Georgia,"Times New Roman",serif;font-size:44px;line-height:1.2}
+.rank small{font-family:system-ui,sans-serif;font-size:12px;margin-left:5px}
+.rank-card:first-child .rank{border-color:#d5b775;background:linear-gradient(140deg,#f2dfab,#c5a360);color:#272014;box-shadow:0 0 0 5px #231e14,0 0 0 6px #8d7549}
+.rank-team{margin:0;font-size:26px;font-weight:500;letter-spacing:.06em}
+.rank-card:first-child .rank-team{font-size:32px;color:#ead5a2}
+.rank-money{text-align:right}
+.rank-money span{display:block;color:#b9aa8e;font-size:12px;letter-spacing:.16em;margin-bottom:8px}
+.rank-money strong{display:block;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-variant-numeric:lining-nums tabular-nums;font-size:clamp(32px,4.4vw,48px);letter-spacing:-.025em;line-height:1.15;white-space:nowrap}
+.rank-card:first-child .rank-money strong{color:#efdaa4;font-size:clamp(36px,5vw,56px)}
+footer{margin-top:28px;text-align:center;color:#b0a28a;font-size:12px;line-height:1.7;letter-spacing:.06em}
+@media(max-width:640px){body{padding:36px 18px}header{padding-bottom:32px}.emblem{width:36px;height:36px;margin-bottom:16px}h1{font-size:22px;letter-spacing:.04em}.header-rule{margin-top:20px}.ranking{gap:12px}.rank-card,.rank-card:first-child{grid-template-columns:56px minmax(0,1fr);gap:10px 22px;padding:26px 24px}.rank{grid-row:1 / 3;width:52px;height:52px;padding-top:6px;font-size:29px}.rank small{font-size:10px;margin-left:3px}.rank-team,.rank-card:first-child .rank-team{font-size:20px}.rank-money{grid-column:2;text-align:left}.rank-money span{font-size:10px;margin-bottom:5px}.rank-money strong,.rank-card:first-child .rank-money strong{font-size:clamp(26px,7.4vw,40px)}footer{margin-top:22px;font-size:11px}}
+@media(max-width:360px){body{padding-inline:12px}.rank-card,.rank-card:first-child{padding-inline:18px;column-gap:16px}h1{font-size:20px}}
 </style>
 </head>
 <body>
 <main>
-  <header><strong>2026年8月</strong><span>物販＋AI · CO差し引き後</span></header>
-  <section class="hero" id="meter-screen" aria-labelledby="team-name">
-    <h1 class="team" id="team-name">Aチーム</h1>
-    <div class="amount" id="amount">¥0</div>
-    <div class="track-wrap">
-      <div class="track" id="meter" role="meter" aria-label="Aチーム純売上" aria-valuemin="0" aria-valuemax="90000000" aria-valuenow="0" aria-valuetext="0円">
-        <div class="fill" id="fill"></div>
-        <div class="marker b" aria-hidden="true"><span>Bチーム</span></div>
-        <div class="marker c" aria-hidden="true"><span>Cチーム</span></div>
-      </div>
-      <div class="axis" aria-hidden="true"><span>0</span><span>9,000万円</span></div>
-    </div>
-    <div class="benchmarks">
-      <div class="benchmark"><p>Bチーム</p><strong>¥30,753,200</strong></div>
-      <div class="benchmark"><p>Cチーム</p><strong>¥85,109,300</strong></div>
-    </div>
-  </section>
-  <section class="results" id="results-screen" aria-labelledby="results-title" hidden>
-    <h1 id="results-title" tabindex="-1">総合順位</h1>
-    <ol class="ranking">
-      <li class="rank-card"><div class="rank">1<small>位</small></div><div class="rank-team">Cチーム</div><div class="rank-money"><span>着金額</span><strong>¥85,109,300</strong></div></li>
-      <li class="rank-card"><div class="rank">2<small>位</small></div><div class="rank-team">Aチーム</div><div class="rank-money"><span>着金額</span><strong>¥82,630,800</strong></div></li>
-      <li class="rank-card"><div class="rank">3<small>位</small></div><div class="rank-team">Bチーム</div><div class="rank-money"><span>着金額</span><strong>¥30,753,200</strong></div></li>
-    </ol>
-    <p class="result-note">物販＋AI · CO差し引き後</p>
-  </section>
-  <div class="controls"><button class="primary" id="start" type="button">開始</button><button id="reset" type="button">リセット</button></div>
-  <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+  <header>
+    <svg class="emblem" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="m8 15 8 7 8-13 8 13 8-7-4 21H12L8 15Z" stroke="currentColor" stroke-width="1.5"/><path d="M13 40h22M13 31h22" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="12" r="2" fill="currentColor"/><circle cx="24" cy="6" r="2" fill="currentColor"/><circle cx="40" cy="12" r="2" fill="currentColor"/></svg>
+    <h1>2026年8月チーム売上順位</h1>
+    <div class="header-rule" aria-hidden="true"></div>
+  </header>
+  <ol class="ranking" aria-label="総合売上順位">
+    <li class="rank-card"><div class="rank">1<small>位</small></div><h2 class="rank-team">Cチーム</h2><div class="rank-money"><span>着金額</span><strong>¥85,109,300</strong></div></li>
+    <li class="rank-card"><div class="rank">2<small>位</small></div><h2 class="rank-team">Aチーム</h2><div class="rank-money"><span>着金額</span><strong>¥82,630,800</strong></div></li>
+    <li class="rank-card"><div class="rank">3<small>位</small></div><h2 class="rank-team">Bチーム</h2><div class="rank-money"><span>着金額</span><strong>¥30,753,200</strong></div></li>
+  </ol>
+  <footer>物販＋AI 合計 · CO差し引き後</footer>
 </main>
-<script>
-'use strict';
-const target = 82630800;
-const maximum = 90000000;
-const duration = 8000;
-const amount = document.getElementById('amount');
-const fill = document.getElementById('fill');
-const meter = document.getElementById('meter');
-const startButton = document.getElementById('start');
-const status = document.getElementById('status');
-const meterScreen = document.getElementById('meter-screen');
-const resultsScreen = document.getElementById('results-screen');
-const resultsTitle = document.getElementById('results-title');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let frame = null;
-let resultsTimer = null;
-let running = false;
-function render(value) {
-  amount.textContent = '¥' + value.toLocaleString('ja-JP');
-  fill.style.width = (value / maximum * 100) + '%';
-  meter.setAttribute('aria-valuenow', String(value));
-  meter.setAttribute('aria-valuetext', value.toLocaleString('ja-JP') + '円');
-}
-function showResults() {
-  resultsTimer = null;
-  meterScreen.hidden = true;
-  resultsScreen.hidden = false;
-  startButton.hidden = true;
-  resultsTitle.focus({preventScroll: true});
-  status.textContent = '総合順位。1位Cチーム、85,109,300円。2位Aチーム、82,630,800円。3位Bチーム、30,753,200円。';
-}
-function finish() {
-  if (frame !== null) cancelAnimationFrame(frame);
-  frame = null;
-  running = false;
-  render(target);
-  status.textContent = 'Aチームの純売上は82,630,800円です。';
-  if (resultsTimer !== null) clearTimeout(resultsTimer);
-  resultsTimer = setTimeout(showResults, 2000);
-}
-function reset() {
-  if (resultsTimer !== null) clearTimeout(resultsTimer);
-  resultsTimer = null;
-  resultsScreen.hidden = true;
-  meterScreen.hidden = false;
-  startButton.hidden = false;
-  if (frame !== null) cancelAnimationFrame(frame);
-  frame = null;
-  running = false;
-  startButton.disabled = false;
-  render(0);
-  status.textContent = 'リセットしました。';
-}
-startButton.addEventListener('click', () => {
-  if (running || startButton.disabled) return;
-  running = true;
-  startButton.disabled = true;
-  status.textContent = '売上メーターを開始しました。';
-  if (reducedMotion.matches) { finish(); return; }
-  const began = performance.now();
-  function tick(now) {
-    if (!running) return;
-    const progress = Math.min(1, (now - began) / duration);
-    // A gentle slowdown keeps the last part of the rise easy to follow.
-    const eased = 1 - Math.pow(1 - progress, 1.6);
-    render(Math.floor(target * eased));
-    if (progress === 1) { finish(); return; }
-    frame = requestAnimationFrame(tick);
-  }
-  frame = requestAnimationFrame(tick);
-});
-document.getElementById('reset').addEventListener('click', reset);
-reducedMotion.addEventListener('change', event => { if (event.matches && running) finish(); });
-</script>
 </body>
 </html>
